@@ -171,7 +171,7 @@ const HomePage = () => {
         </main>
           
 
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@  SERVICES   @@@@@@@@@@@@@@@@@@@@@@@@ */}
+      {/* @@@@@@@@@@@@@@@@@@@@@@@@  SERVICES   @@@@@@@@@@@@@@@@@@@@@@@@ */} {/* TESTING MESSAGE */}
       <section id="services" className="extra-info-container">
           <h2>Our Services</h2>
           <input
