@@ -252,6 +252,59 @@ const HomePage = () => {
         </div>
         </div>
       </section>
+    
+      {/* @@@@@@@@@@@@@@@@@@@@@@@@  CONTACT US   @@@@@@@@@@@@@@@@@@@@@@@@ */}
+
+<section id="contact-us" className="contact-us">
+  <h1>Contact <span className="emphasize"><strong>Us</strong></span></h1>
+  <div className="contact-container">
+    
+    {/* Contact Form */}
+    <div className="contact-form">
+      <h2>Get in Touch</h2>
+      <form>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        
+        <button type="submit" className="contact-submit-btn">Send Message</button>
+      </form>
+    </div>
+    
+    {/* Map Image */}
+    <div className="contact-map">
+      <h2>Visit Us</h2>
+      <img src="/src/assets/map.png" alt="Clinic Location" className="map-image" />
+      <p>509, Bayan Luma 3, Imus, Cavite, Philippines</p>
+    </div>
+
+    {/* Clinic Schedule */}
+    <div className="clinic-schedule">
+      <h2>Clinic Schedule</h2>
+      <ul>
+        <li><strong>Monday:</strong> 8:00 AM - 5:00 PM</li>
+        <li><strong>Tuesday:</strong> 8:00 AM - 5:00 PM</li>
+        <li><strong>Wednesday:</strong> 8:00 AM - 5:00 PM</li>
+        <li><strong>Thursday:</strong> 8:00 AM - 5:00 PM</li>
+        <li><strong>Friday:</strong> 8:00 AM - 5:00 PM</li>
+        <li><strong>Saturday:</strong> 9:00 AM - 3:00 PM</li>
+        <li><strong>Sunday:</strong> Closed</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
       {/* @@@@@@@@@@@@@@@@@@@@@@@@  footer   @@@@@@@@@@@@@@@@@@@@@@@@ */}
 

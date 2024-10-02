@@ -40,6 +40,11 @@ const SignUp = () => {
                         <input type="text" placeholder="Email or Phone Number" required />
                         <input type="password" placeholder="Password" required />
                         <input type="password" placeholder="Confirm Password" required />
+                        <div className="checkbox-container">
+                                <input type="checkbox" id="remember-me" className="remember-me-checkbox" />
+                                <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
+                                <a href="#" className="forgot-password"><strong>Terms and Conditions</strong></a>
+                        </div>
                         <button type="submit" className="login-button">Sign up</button>
                     </form>
                     <div className="login-footer">

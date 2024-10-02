@@ -68,6 +68,7 @@ html, body, #root {
   border-radius: 20px;
   border: none;
   font-size: 14px;
+  cursor:pointer;
 }
 
 .login-btn {
@@ -80,6 +81,12 @@ html, body, #root {
   background-color: #A3D79C;
   color: white;
   border: 2px solid #A3D79C;
+}
+
+.login-btn:hover, .appoint-btn:hover {
+  background-color: #bad69e;
+  color: white;
+  border: 2px solid #bad69e;
 }
 
 /* Hero Section */
@@ -122,11 +129,21 @@ html, body, #root {
   font-weight: lighter;
 }
 
-
 .appoint-main-btn {
   background-color: #A3D79C;
   color: white;
   border: 2px solid #A3D79C;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 100px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.appoint-main-btn:hover {
+  background-color: #bad69e;
+  color: white;
+  border: 2px solid #bad69e;
   padding: 10px 30px;
   border: none;
   border-radius: 100px;
@@ -445,6 +462,100 @@ html, body, #root {
   transform: scale(1.05);
 }
 
+/* Contact Us */
+
+.contact-us {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.contact-us h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #333;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-form, .contact-map, .clinic-schedule {
+  flex: 1;
+  margin: 10px;
+  max-width: 500px;
+}
+
+.contact-form h2, .contact-map h2, .clinic-schedule h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact-submit-btn:hover {
+  background-color: #45a049;
+}
+
+.contact-map {
+  text-align: center;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.clinic-schedule {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.clinic-schedule ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.clinic-schedule li {
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+.clinic-schedule li strong {
+  color: #333;
+}
 
 
 /* Footer Styles */
