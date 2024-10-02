@@ -1,0 +1,575 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+html, body, #root {
+  scroll-behavior: smooth;
+  font-family: 'Nunito', sans-serif;
+  background-color: black;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Setup */
+.container {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  padding: 0px;
+  color: #333;
+  width: 100%; 
+  height: 100vh; 
+  margin: 0; 
+   
+  padding-top: 60px; /* Adjust based on header height */
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 20px; /* Adjust padding as needed */
+  width: 100%;
+  box-sizing: border-box; 
+  background-color: #fff; /* Ensure a solid background for visibility */
+  z-index: 1000; /* Keep the header on top of other content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.034); /* Optional shadow for better visibility */
+}
+
+.logo {
+  width: 200px; 
+}
+
+.nav {
+  display: flex;
+  gap: 20px; 
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: medium;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px; 
+}
+
+.login-btn,
+.appoint-btn, .appoint-main-btn {
+  font-family: 'Nunito', sans-serif;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: #A3D79C;
+  border: 2px solid #A3D79C;
+}
+
+.appoint-btn {
+  background-color: #A3D79C;
+  color: white;
+  border: 2px solid #A3D79C;
+}
+
+/* Hero Section */
+.hero-section {
+  margin-top: 40px;
+  padding: 0px 20px; /* Increase top and bottom padding */
+  height: 80vh; /* Set a height of 80% of the viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  background-color: #fff; /* Optional: Add a background color */
+}
+
+.hero-section h1 {
+  font-size: 35px;
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+
+.emphasize {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-section h2 {
+  margin-top: 0;
+  font-size: 38px;
+  color: #333;
+  margin-bottom: 0px;
+} 
+
+.hero-section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto; 
+  margin-right: auto; 
+  font-weight: lighter;
+}
+
+
+.appoint-main-btn {
+  background-color: #A3D79C;
+  color: white;
+  border: 2px solid #A3D79C;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 100px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Happy Teeth Image */
+.happy-teeth {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.tooth {
+  width: 450px;
+  margin: 0 0px;
+}
+
+/* Extra Info Section with Floating Effect */
+.extra-info-container {
+  margin: 60px auto; /* Center the container with auto margins */
+  padding: 20px;
+  background-color: #ffffff4b;
+  border-radius: 25px;
+  text-align: left; /* Align text to the left for better layout */
+  max-width: 1200px; /* Set a max width for the floating container */
+  max-height: 1500px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.075); /* Add shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effect */
+  display: flex;
+  flex-direction: column; /* Ensure the container grows vertically */
+}
+
+.extra-info-container:hover {
+  transform: translateY(-10px); /* Floating effect on hover */
+  box-shadow: 0 6px 31px rgba(0, 0, 0, 0.123); /* Enhance shadow on hover */
+}
+
+.extra-info-container h2 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Services Section */
+.extra-info-container {
+  padding: 5px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.extra-info-container h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 0px;
+  margin-left: 14px;
+  text-align: left;
+}
+
+.search-input {
+  width: 50%;
+  padding: 10px;
+  margin: 0 0 0 570px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Button List */
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.button-list {
+  flex-basis: 30%; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 430px; /* Set max height to show 6 buttons */
+  padding-right: 10px; /* Space for the scrollbar */
+}
+
+.button {
+  display: flex;
+  justify-content: space-between; /* Align text and image to the ends */
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  padding: 10px 20px;
+  width: 350px;
+  background-color: white;
+  color: #A3D79C;
+  border: 2px solid #A3D79C;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button img.button-image {
+  width: auto; /* Adjust width of the image */
+  height: 40px; /* Adjust height of the image */
+  margin-left: 10px; /* Space between text and image */
+}
+
+.button:hover,
+.button.active {
+  background-color: #A3D79C;
+  color: white;
+}
+
+.button:hover img.button-image {
+  filter: brightness(0) invert(1); /* Invert the image color on hover */
+}
+
+@media (max-width: 768px) {
+  .button-list {
+    max-height: 240px; /* Adjust for smaller screens if needed */
+  }
+}
+
+
+/* Service Detail */
+.service-detail {
+  flex-basis: 60%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-detail img.service-image {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.service-detail .service-description {
+  font-size: 18px;
+  color: #333;
+  max-width: 600px;
+  text-align: center;
+}
+
+.service-detail .service-description h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.service-detail .service-description p {
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+  }
+
+  .button-list {
+    flex-basis: 100%;
+  }
+
+  .service-detail {
+    flex-basis: 100%;
+  }
+}
+
+/* Why DDC Section */
+.why-ddc {
+  margin-top: 90px ; /* Center the section horizontally */
+  padding: 60px; /* Add padding for spacing */
+  background-color: #ffffff; /* Light background for contrast */
+  border-radius: 10px; /* Rounded corners */
+  max-width: 1200px; /* Max width for the section */
+  position: relative; /* Allows for absolute positioning of images */
+  margin-bottom: 60px; /* Adjust as needed */
+  overflow: hidden; /* Ensures floating elements are cleared */
+}
+
+.why-ddc-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.image-gallery {
+  position: relative; /* Allows for absolute positioning of images */
+  flex: 1; /* Take up space on the left */
+}
+
+.abstract-image {
+  position: absolute; /* Absolute positioning */
+  border-radius: 10px; /* Rounded corners for images */
+  
+}
+
+.abstract-image:nth-of-type(1) {
+  box-shadow: 25px 27px 17px rgba(0, 0, 0,  0.199);
+  width: 200px; /* Fixed width for the first image */
+  top: 20px; /* Position from the top */
+  left: 140%; /* Position from the left */
+}
+
+.abstract-image:nth-of-type(2) {
+  box-shadow: 25px 27px 17px rgba(0, 0, 0,  0.199);
+  width: 200px; /* Fixed width for the second image */
+  top: 240px; /* Position from the top */
+  left: 140%; /* Position from the left */
+}
+
+.abstract-image:nth-of-type(3) {
+  box-shadow: 25px 27px 17px rgba(0, 0, 0,  0.199);
+  width: 250px; /* Fixed width for the third image */
+  top: 100px; /* Position from the top */
+  left:27%; /* Position from the left */
+}
+
+.why-ddc-info {
+  flex: 2; /* Allow text content to take up more space */
+  padding-left: 420px; /* Add padding to the left for spacing */
+}
+
+.why-ddc-info h2 {
+  font-weight: bold;
+  font-size: 2.5em; /* Font size for the header */
+  color: #333;
+  margin-bottom: 30px; /* Margin below the header */
+  text-align: left; /* Align text to the left */
+}
+
+.why-ddc-item {
+  margin-bottom: 30px; /* Margin between items */
+}
+
+.why-ddc-item h3 {
+  font-size: 1.1em; /* Font size for section titles */
+  color: #333;
+  margin-bottom: 0px; /* Margin below section titles */
+  text-align: left; /* Align text to the left */
+}
+
+.why-ddc-item p {
+  font-size: 0.9em; /* Font size for descriptions */
+  color: #666;
+  text-align: left; /* Align text to the left */
+}
+.why-ddc::after {
+  content: "";
+  display: block;
+  height: 50px; /* Adjust to add space */
+}
+
+
+
+
+
+
+/* Styling for the Dentists section */
+.dentists {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.dentists h1 {
+  font-size: 2.5em;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.dentist-panels {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between the two panels */
+  flex-wrap: wrap; /* Ensures it adjusts for mobile */
+}
+
+.panel {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 300px; /* Adjust as needed */
+  transition: transform 0.3s ease;
+}
+
+.panel img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.panel h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.panel p {
+  font-size: 1em;
+  color: #666;
+}
+
+.panel:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: #ffffff;
+  padding: 20px 20px 20px 20px; /* Added 'px' for proper padding */
+  margin: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Limit content width for large screens */
+  margin-right: 70px; /* Center the content */
+  margin-left: 50px;
+  padding: 0 0px; /* Add padding to the sides */
+}
+
+.footer-column {
+  flex: 1; /* Allow columns to grow */
+  min-width: 200px; /* Minimum width for columns */
+  margin-bottom: 40px; /* Space between footer columns */
+}
+
+.footer-panel {
+  width: 100%; /* Full width of the footer */
+  height: 20px; /* Adjust this height to control spacing */
+  background-color: transparent; /* Make the background transparent or use any color */
+}
+
+.footer-contact a {
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.footer-contact a:hover {
+  color: #A3D79C; /* Link hover color */
+}
+/* Quick Links column */
+.footer-links {
+  display: flex;
+  text-align: left;
+  flex-direction: column; /* Stack links vertically */
+  gap: 10px; /* Space between links */
+  text-decoration: underline;
+}
+
+.footer-links a {
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #A3D79C; /* Link hover color */
+}
+
+.footer h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  text-align: left; 
+}
+
+.footer p {
+  color: #f9f9f9;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: left; 
+}
+
+.footer .footer-contact {
+  margin-top: 20px;
+}
+
+.footer .social-icons {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  text-decoration: underline;
+  gap: 10px;
+}
+.footer .social-icons a {
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer .social-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons img:hover {
+  transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #555; /* Subtle divider */
+  padding-top: 20px;
+  font-size: 12px;
+  color: #aaa;
+  width: 100%;
+  
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .footer-column {
+    margin-bottom: 30px; /* Space between columns on small screens */
+  }
+
+  .footer .footer-contact {
+    margin-top: 15px; /* Adjusted margin for smaller screens */
+  }
+}
