@@ -1,13 +1,16 @@
-
 import React, { useState } from 'react';
-import './styles/App.css'; // Ensure you link the CSS file
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './styles/App.css';
+import Header from '../components/Header';
+import Login from './Login'
+import SignUp from './Signup';
 
 const HomePage = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [activeButton, setActiveButton] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Update the services array with the actual details
+  // SERVICES
   const services = [
     {
       id: 0,
@@ -145,20 +148,8 @@ const HomePage = () => {
 
   return (
     <>
-    {/* @@@@@@@@@@@@@@@@@@@@@@@@  HEADER   @@@@@@@@@@@@@@@@@@@@@@@@ */}
-      <header className="header">
-        <img src="/src/assets/logowithtext.png" alt="Dominguez Dental Clinic Logo" className="logo" />
-        <nav className="nav">
-          <a href="#services">Services</a>
-          <a href="#why-ddc">Why DDC</a>
-          <a href="#dentistssec">Dentists</a>
-          <a href="#contact">Contact Us</a>
-        </nav>
-        <div className="header-buttons">
-          <button className="login-btn">Log In</button>
-          <button className="appoint-btn">Appoint Now</button>
-        </div>
-      </header>
+    <Header />
+
       <div className="container">
         <main className="hero-section">
           <h1>Find Your <span className="emphasize"><strong>Smile</strong></span> at</h1>
@@ -171,7 +162,7 @@ const HomePage = () => {
         </main>
           
 
-      {/* @@@@@@@@@@@@@@@@@@@@@@@@  SERVICES   @@@@@@@@@@@@@@@@@@@@@@@@ */} {/* TESTING MESSAGE */}
+      {/* @@@@@@@@@@@@@@@@@@@@@@@@  SERVICES   @@@@@@@@@@@@@@@@@@@@@@@@ */}
       <section id="services" className="extra-info-container">
           <h2>Our Services</h2>
           <input
@@ -223,7 +214,7 @@ const HomePage = () => {
               <img src="/src/assets/abstract3.jpg" alt="Abstract Image 3" className="abstract-image" />
             </div>
             <div className="why-ddc-info">
-              <h2>Why DDC</h2>
+              <h2>Why DDC?</h2>
               <div className="why-ddc-item">
                 <h3>Patient Centered Care</h3>
                 <p>At Dominguez Dental Clinic, we prioritize our patients' needs and comfort. Our approach ensures that each patient receives personalized care tailored to their unique requirements.</p>
@@ -239,7 +230,6 @@ const HomePage = () => {
             </div>
           </div>
         </section>
- 
  
       {/* @@@@@@@@@@@@@@@@@@@@@@@@  DENtiST   @@@@@@@@@@@@@@@@@@@@@@@@ */}
 
@@ -268,7 +258,6 @@ const HomePage = () => {
     <div className="footer-column">
       <h4>About Us</h4>
       <p>We are committed to providing the best services...</p>
-
       <div className="footer-contact">
         <h4>Contact</h4>
         <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
@@ -276,7 +265,6 @@ const HomePage = () => {
       </div>
     </div>
 
-    
     <div className="footer-column">
   <h4>Quick Links</h4>
   <div className="footer-links">
@@ -287,32 +275,38 @@ const HomePage = () => {
   </div>
 </div>
 
-
     <div className="footer-column">
       <h4>Follow Us</h4>
       <div className="social-icons">
         <a href="#" aria-label="Facebook">
           <img src="facebook-icon.svg" alt="Facebook" />
         </a>
-        <a href="#" aria-label="Instagram">
-          <img src="instagram-icon.svg" alt="Instagram" />
-        </a>
       </div>
     </div>
   </div>
 
   <div className="footer-bottom">
-    <p1>&copy; 2024 Your Website Name. All Rights Reserved.</p1>
+    <p1>&copy; 2024 Book with DDC. All Rights Reserved.</p1>
   </div>
 </footer>
-
-
       </div>
     </>
   );
 };
 
-export default HomePage;
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
 
 
 
