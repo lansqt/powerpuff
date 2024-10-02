@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+html, body, #root {
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+    background-color: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.login-page {
+    display: flex;
+    height: 100vh; 
+}
+
+.backhome-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2; /* button above image */
+  display: flex;
+  gap: 5px; /* space between back & home */
+}
+
+.back-button,
+.home-button {
+  color: #cacaca;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.back-button:hover,
+.home-button:hover {
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.side-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  z-index: 1; /* image below buttons */
+}
+
+.left-columnp {
+  position: relative;
+  width: 65%; 
+  height: 100vh; 
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-columnp {
+  width: 35%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.login-header .login-logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px; 
+}
+
+.login-button, .next-button {
+    width: 100%; 
+}
+
+form h1 {
+  color: #333;
+  text-align: left;
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.login-container {
+  padding: 0px;
+  width: 500px; /* 400 yung dati */
+}
+
+.login-logo {
+  width: 100px; /* Adjusted size for better visibility */
+  height: auto;
+  margin-bottom: 0px; /* Space below the logo */
+}
+
+.next-button {
+  width: 20px; /* Width of the button */
+  height: 20px; /* Height of the button (same as width for a circle) */
+  border-radius: 50%; /* Makes the button circular */
+  background-color: #9cc473; /* Background color (customize as needed) */
+  color: white; /* Text color */
+  border: none; /* No border */
+  display: flex; /* Use flex to center content */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  font-size: 10px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Transition effect on hover */
+  margin-left: 0px;
+}
+
+.next-button:hover {
+  color: #ffffff;
+  background-color: #bad69e;
+}
+
+.login-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  padding: 12px; 
+  margin: 10px 0;
+  border: 1px solid #d1d1d1; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #9cc473; 
+  outline: none; 
+}
+
+.login-button {
+  font-family: 'Nunito', sans-serif;
+  padding: 10px 139px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background-color: #9cc473;
+  color: white;
+  border: 2px solid #9cc473;
+  margin-top: 15px;
+  
+}
+
+.login-button:hover {
+ background-color: transparent;
+ border: 2px solid #9cc473;
+ color:#9cc473;
+}
+
+.login-footerp {
+  background-color: #a8a8a8;
+  padding: 15px 15px; 
+  color: white;
+  margin-top: 125px;
+  font-size: 14px;
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+  justify-content: flex-end; /* Space between elements */
+  gap: 10px;
+}
+
+.account-text {
+  margin: 20px 50px; /* Space above and below */
+  font-size: 14px; /* Smaller text size */
+  color: #a8a8a8;
+  text-align: center;
+}
+
+.create-account,
+.forgot-password {
+  color: #9cc473; /* Change color to distinguish clickable link */
+  text-decoration: none;
+  font-weight: 500; /* Medium weight for better readability */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.create-account:hover,
+.forgot-password:hover {
+  color: #bad69e;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center; /* Center checkbox and label vertically */
+  margin-top: 10px; /* Space above the checkbox */
+}
+
+.remember-me-checkbox {
+  width: 18px; /* Adjust the width of the checkbox */
+  height: 18px; /* Adjust the height of the checkbox */
+  margin-right: 10px; /* Space between checkbox and label */
+  cursor: pointer; /* Change cursor on hover */
+  accent-color: #9cc473; /* Change the color of the checkbox */
+}
+
+.remember-me-label {
+  font-size: 14px; /* Font size for the label */
+  color: #333; /* Label color */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.forgot-password {
+  margin-left: auto; /* Push "Forgot Password?" to the right */
+  color: #9cc473; /* Change color for link */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px;
+}
+
+form {
+padding-top: 0;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 0.01px;
+}
+
+.emphasize {
+    font-style: italic;
+    font-weight: 400;
+}
