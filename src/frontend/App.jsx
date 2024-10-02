@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './styles/App.css';
-import Header from '../components/Header';
+import Header from './components/Header';
 import Login from './Login'
 import SignUp from './Signup';
 
@@ -235,17 +235,19 @@ const HomePage = () => {
 
       <section id="dentistssec">
         <div className="dentists">
-        <h1>Meet Our <strong>Dentists</strong></h1>
+        <h1>Meet Our <span className="emphasize"><strong>Dentists</strong></span></h1>
         <div className="dentist-panels">
           <div className="panel">
             <img src="/src/assets/dentist1.jpg" alt="Dentist 1" /> {/* Self-closing img tag */}
-            <h3>Dentist 1</h3>
-            <p>Short bio or description of Dentist 1.</p>
+            <h3>Dr. Carites M. Dominguez</h3>
+            <p>Doctor of Dental Medicine 1991</p>
+            <p>University of the East</p>
           </div>
           <div className="panel">
             <img src="/src/assets/dentist2.jpg" alt="Dentist 2" /> {/* Self-closing img tag */}
-            <h3>Dentist 2</h3>
-            <p>Short bio or description of Dentist 2.</p>
+            <h3>Dr. Dana M. Dominguez</h3>
+            <p>Doctor of Dental Medicine 2017</p>
+            <p>University of the East</p>
           </div>
         </div>
         </div>
