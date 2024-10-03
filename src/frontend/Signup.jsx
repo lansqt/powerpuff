@@ -43,11 +43,11 @@ const SignUp = () => {
                         <div className="checkbox-container">
                                 <input type="checkbox" id="remember-me" className="remember-me-checkbox" />
                                 <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
-                                <a href="#" className="forgot-password"><strong>Terms and Conditions</strong></a>
+                                <a href="#" className="terms-and-conditions"><strong>Terms and Conditions</strong></a>
                         </div>
                         <button type="submit" className="login-button">Sign up</button>
                     </form>
-                    <div className="login-footer">
+                    <div className="signup-footer">
                         <span>Already have an account? <strong>Log in here</strong></span>
                         <button className="next-button" onClick={handleNextButtonClick}><i className="bi bi-chevron-left"></i></button>
                     </div>

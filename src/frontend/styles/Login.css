@@ -167,7 +167,7 @@ input[type="password"]:focus {
   background-color: #a8a8a8;
   padding: 15px 15px; 
   color: white;
-  margin-top: 125px;
+  margin-top: 65px;
   font-size: 14px;
   display: flex; /* Use flexbox to align items */
   align-items: center; /* Center items vertically */

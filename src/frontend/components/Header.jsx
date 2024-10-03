@@ -11,7 +11,7 @@ const Header = () => {
         <a href="#services">Services</a>
         <a href="#why-ddc">Why DDC</a>
         <a href="#dentistssec">Dentists</a>
-        <a href="#footer">Contact Us</a>
+        <a href="#contact-us">Contact Us</a>
       </nav>
       <div className="header-buttons">
         <Link to="/login">

@@ -73,14 +73,14 @@ html, body, #root {
 
 .login-btn {
   background-color: transparent;
-  color: #A3D79C;
-  border: 2px solid #A3D79C;
+  color: #9cc473;
+  border: 2px solid #9cc473;
 }
 
 .appoint-btn {
-  background-color: #A3D79C;
+  background-color: #9cc473;
   color: white;
-  border: 2px solid #A3D79C;
+  border: 2px solid #9cc473;
 }
 
 .login-btn:hover, .appoint-btn:hover {
@@ -130,9 +130,9 @@ html, body, #root {
 }
 
 .appoint-main-btn {
-  background-color: #A3D79C;
+  background-color: #9cc473;
   color: white;
-  border: 2px solid #A3D79C;
+  border: 2px solid #9cc473;
   padding: 10px 30px;
   border: none;
   border-radius: 100px;
@@ -243,8 +243,8 @@ html, body, #root {
   padding: 10px 20px;
   width: 350px;
   background-color: white;
-  color: #A3D79C;
-  border: 2px solid #A3D79C;
+  color: #9cc473;
+  border: 2px solid #9cc473;
   border-radius: 30px;
   cursor: pointer;
   text-align: left;
@@ -259,7 +259,7 @@ html, body, #root {
 
 .button:hover,
 .button.active {
-  background-color: #A3D79C;
+  background-color: #9cc473;
   color: white;
 }
 
@@ -405,11 +405,6 @@ html, body, #root {
   display: block;
   height: 50px; /* Adjust to add space */
 }
-
-
-
-
-
 
 /* Styling for the Dentists section */
 .dentists {

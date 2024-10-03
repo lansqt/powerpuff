@@ -8,6 +8,7 @@ html, body, #root {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
 }
 
 .login-page {
@@ -144,7 +145,7 @@ input[type="password"]:focus {
 
 .login-button {
   font-family: 'Nunito', sans-serif;
-  padding: 10px 139px;
+  padding: 10px 100px;
   border-radius: 20px;
   border: none;
   font-size: 14px;
@@ -161,11 +162,11 @@ input[type="password"]:focus {
  color:#9cc473;
 }
 
-.login-footer {
+.signup-footer {
   background-color: #a8a8a8;
   padding: 15px 15px; 
   color: white;
-  margin-top: 35px;
+  margin-top: -60px;
   font-size: 14px;
   display: flex; /* Use flexbox to align items */
   align-items: center; /* Center items vertically */
@@ -181,7 +182,7 @@ input[type="password"]:focus {
 }
 
 .create-account,
-.forgot-password {
+.terms-and-conditions  {
   color: #9cc473; /* Change color to distinguish clickable link */
   text-decoration: none;
   font-weight: 500; /* Medium weight for better readability */
@@ -189,7 +190,7 @@ input[type="password"]:focus {
 }
 
 .create-account:hover,
-.forgot-password:hover {
+.terms-and-conditions:hover {
   color: #bad69e;
 }
 
@@ -213,18 +214,18 @@ input[type="password"]:focus {
   cursor: pointer; /* Change cursor on hover */
 }
 
-.forgot-password {
-  margin-left: auto; /* Push "Forgot Password?" to the right */
+.terms-and-conditions {
+  margin-left: 3px;
   color: #9cc473; /* Change color for link */
   text-decoration: none; /* Remove underline */
   font-size: 14px;
 }
 
 form {
-padding-top: 0;
-padding-left: 40px;
-padding-right: 40px;
-padding-bottom: 0.01px;
+padding-left: 60px;
+padding-right: 60px;
+/* padding-bottom: 0.01px; */
+padding-bottom:60px;
 }
 
 .emphasize {
