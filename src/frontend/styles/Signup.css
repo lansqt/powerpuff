@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
-html, body, #root {
+body, html, #root {
     scroll-behavior: smooth;
     font-family: 'Nunito', sans-serif;
     background-color: white;
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
+    
 }
 
 .login-page {
@@ -166,7 +166,7 @@ input[type="password"]:focus {
   background-color: #a8a8a8;
   padding: 15px 15px; 
   color: white;
-  margin-top: -60px;
+  margin-top: -59px;
   font-size: 14px;
   display: flex; /* Use flexbox to align items */
   align-items: center; /* Center items vertically */
