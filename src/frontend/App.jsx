@@ -12,135 +12,144 @@ const HomePage = () => {
 
   // SERVICES
   const services = [
-    {
-      id: 0,
-      title: 'Consultation',
-      description: 'Description for Service #1.',
-      image: '/src/assets/consultation.png', // Placeholder image
-      buttonImage: '/src/assets/button/consultation-button.png',
-    },
-    {
-      id: 1,
-      title: 'Oral Prophylaxis',
-      description: 'Tooth extraction is the removal of a damaged or decayed tooth to prevent further issues or to prepare for other dental procedures.',
-      image: '/src/assets/oral-prophylaxis.png', // Update with the correct path
-      buttonImage: '/src/assets/button/oral-prophylaxis-button.png',
-    },
-    {
-      id: 2,
-      title: 'Tooth Extraction',
-      description: 'Tooth extraction is the removal of a damaged or decayed tooth to prevent further issues or to prepare for other dental procedures.',
-      image: '/src/assets/tooth-extraction.png', // Update with the correct path
-      buttonImage: '/src/assets/button/tooth-extraction-button.png',
-    },
-    {
-      id: 3,
-      title: 'Tooth Restoration',
-      description: 'Tooth restoration involves repairing or replacing damaged or decayed teeth using fillings, crowns, or other restorative techniques.',
-      image: '/src/assets/tooth-restoration.png', // Update with the correct path
-      buttonImage: '/src/assets/button/tooth-restoration-button.png',
-    },
-    {
-      id: 4,
-      title: 'Periapical Radiograph',
-      description: 'Description for Service #1.',
-      image: '/src/assets/periapical-radiograpah.png', // Placeholder image
-      buttonImage: '/src/assets/button/periapical-radiograph-button.png',
-    },
-    {
-      id: 5,
-      title: 'Root Canal Treatment',
-      description: 'Description for Service #3.',
-      image: '/src/assets/root-canal-treatment.png', // Placeholder image
-      buttonImage: '/src/assets/button/root-canal-treatment-button.png',
-    },
-    {
-      id: 6,
-      title: 'Dentures',
-      description: 'Dentures are removable appliances used to replace missing teeth and restore the function and appearance of your smile.',
-      image: '/src/assets/dentures.png', // Update with the correct path
-      buttonImage: '/src/assets/button/dentures-button.png',
-    },
-    {
-      id: 7,
-      title: 'Orthodontic Treatment',
-      description: 'Dentures are removable appliances used to replace missing teeth and restore the function and appearance of your smile.',
-      image: '/src/assets/orthodontic-treatment.png', // Update with the correct path
-      buttonImage: '/src/assets/button/orthodontic-treatment-button.png',
-    },
-    {
-      id: 8,
-      title: 'Odontectomy',
-      description: 'Tooth restoration involves repairing or replacing damaged or decayed teeth using fillings, crowns, or other restorative techniques.',
-      image: '/src/assets/odontectomy.png', // Update with the correct path
-      buttonImage: '/src/assets/button/odontectomy-button.png',
-    },
-    {
-      id: 9,
-      title: 'Teeth Whitening',
-      description: 'Description for Service #4.',
-      image: '/src/assets/teeth-withening.png', // Placeholder image
-      buttonImage: '/src/assets/button/teeth-whitening-button.png',
-    },
-    {
-      id: 10,
-      title: 'Frenectomy',
-      description: 'Veneers are thin shells of porcelain or composite resin that cover the front surface of your teeth to improve their appearance.',
-      image: '/src/assets/frenectomy.png', // Update with the correct path
-      buttonImage: '/src/assets/button/frenectomy-button.png',
-
-
-      title: 'Root Canal Treatment',
-      description: 'Description for Service #3.',
-      image: '/src/assets/root-canal-treatment.png', // Placeholder image
-      buttonImage: '/src/assets/button/root-canal-treatment-button.png',
-    },
-    {
-      id: 11,
-      title: 'Typical Flouride Application',
-      description: 'Description for Service #5.',
-      image: '/src/assets/service5.png', // Placeholder image
-      buttonImage: '/src/assets/button/typical-flouride-application-button.png',
-
-    },
-    {
-      id: 12,
-      title: 'Veneers',
-      description: 'Veneers are thin shells of porcelain or composite resin that cover the front surface of your teeth to improve their appearance.',
-      image: '/src/assets/veneers.png', // Update with the correct path
-      buttonImage: '/src/assets/button/veneers-button.png',
-    },
-    {
-      id: 13,
-      title: 'TMJ Occlusal',
-      description: 'Description for Service #5.',
-      image: '/src/assets/tmj-occlusal.png', // Placeholder image
-      buttonImage: '/src/assets/button/tmj-occlusal-button.png',
-    },
-    {
-      id: 14,
-      title: 'Jacket Crown',
-      description: 'Orthodontic treatment involves using braces or aligners to correct the alignment of your teeth and jaws for better function and aesthetics.',
-      image: '/src/assets/jacket-crown.png', // Update with the correct path
-      buttonImage: '/src/assets/button/jacket-crown-button.png',
-
-    },
-    {
-      id: 15,
-      title: 'Mouthguard',
-      description: 'Retainers are used after orthodontic treatment to maintain the new position of your teeth and prevent them from shifting back.',
-      image: '/src/assets/mouthguard.png', // Update with the correct path
-      buttonImage: '/src/assets/button/mouthguard-button.png',
-    },
-    {
-      id: 16,
-      title: 'Retainers',
-      description: 'Description for Service #2.',
-      image: '/src/assets/retainers.png', // Placeholder image
-      buttonImage: '/src/assets/button/retainers-button.png',
-
-    },
-  ];
+      {
+        id: 0,
+        title: 'Consultation',
+        description: 'A thorough dental examination and consultation to assess your oral health.',
+        image: '/src/assets/serviceimage/consultation-button.png',
+        buttonImage: '/src/assets/button/consultation-button.png',
+        price: '₱500.00',
+      },
+      {
+        id: 1,
+        title: 'Oral Prophylaxis',
+        description: 'A cleaning procedure that removes plaque and tartar to prevent cavities and gum disease.',
+        image: '/src/assets/serviceimage/oral-prophylaxis-button.png',
+        buttonImage: '/src/assets/button/oral-prophylaxis-button.png',
+        price: '₱1,000.00 (minimum)',
+      },
+      {
+        id: 2,
+        title: 'Tooth Extraction',
+        description: 'Removal of a damaged or decayed tooth to prevent further complications.',
+        image: '/src/assets/serviceimage/tooth-extraction-button.png',
+        buttonImage: '/src/assets/button/tooth-extraction-button.png',
+        price: '₱1,000.00 (minimum)',
+      },
+      {
+        id: 3,
+        title: 'Tooth Restoration',
+        description: 'Repair or replacement of damaged teeth using fillings, crowns, or other restorative techniques.',
+        image: '/src/assets/serviceimage/tooth-restoration-button.png',
+        buttonImage: '/src/assets/button/tooth-restoration-button.png',
+        price: '₱1,000.00 (minimum)',
+      },
+      {
+        id: 4,
+        title: 'Periapical Radiograph',
+        description: 'An X-ray examination to diagnose issues below the gumline.',
+        image: '/src/assets/serviceimage/periapical-radiograph-button.png',
+        buttonImage: '/src/assets/button/periapical-radiograph-button.png',
+        price: '₱500.00',
+      },
+      {
+        id: 5,
+        title: 'Root Canal Treatment',
+        description: 'A procedure to remove infected pulp from a tooth and protect it from future infections.',
+        image: '/src/assets/serviceimage/root-canal-treatment-button.png',
+        buttonImage: '/src/assets/button/root-canal-treatment-button.png',
+        price: '₱7,000.00 per canal',
+      },
+      {
+        id: 6,
+        title: 'Dentures',
+        description: 'Removable appliances used to replace missing teeth and restore functionality.',
+        image: '/src/assets/serviceimage/dentures-button.png',
+        buttonImage: '/src/assets/button/dentures-button.png',
+        price: '₱4,000.00 - ₱18,000.00',
+      },
+      {
+        id: 7,
+        title: 'Orthodontic Treatment',
+        description: 'Correct the alignment of your teeth and jaws using braces or aligners.',
+        image: '/src/assets/serviceimage/orthodontic-treatment-button.png',
+        buttonImage: '/src/assets/button/orthodontic-treatment-button.png',
+        price: '₱60,000.00',
+      },
+      {
+        id: 8,
+        title: 'Odontectomy',
+        description: 'Surgical removal of an impacted or damaged tooth.',
+        image: '/src/assets/serviceimage/odontectomy-button.png',
+        buttonImage: '/src/assets/button/odontectomy-button.png',
+        price: '₱8,000.00 - ₱10,000.00',
+      },
+      {
+        id: 9,
+        title: 'Teeth Whitening',
+        description: 'Brighten your smile with professional teeth whitening treatments.',
+        image: '/src/assets/serviceimage/teeth-whitening-button.png',
+        buttonImage: '/src/assets/button/teeth-whitening-button.png',
+        price: '₱12,000.00',
+      },
+      {
+        id: 10,
+        title: 'Frenectomy',
+        description: 'A minor surgical procedure to remove a frenum in the mouth.',
+        image: '/src/assets/serviceimage/frenectomy-button.png',
+        buttonImage: '/src/assets/button/frenectomy-button.png',
+        price: '₱6,000.00',
+      },
+      {
+        id: 11,
+        title: 'Typical Fluoride Application',
+        description: 'Fluoride treatment to strengthen teeth and prevent cavities.',
+        image: '/src/assets/serviceimage/typical-flouride-application-button.png',
+        buttonImage: '/src/assets/button/typical-flouride-application-button.png',
+        price: '₱500.00',
+      },
+      {
+        id: 12,
+        title: 'Veneers',
+        description: 'Thin shells of porcelain or composite resin that cover the front surface of your teeth.',
+        image: '/src/assets/serviceimage/veneers-button.png',
+        buttonImage: '/src/assets/button/veneers-button.png',
+        price: '₱3,000.00 - ₱18,000.00',
+      },
+      {
+        id: 13,
+        title: 'TMJ Occlusal',
+        description: 'Treatment for temporomandibular joint disorder to alleviate pain and improve functionality.',
+        image: '/src/assets/serviceimage/tmj-occlusal-button.png',
+        buttonImage: '/src/assets/button/tmj-occlusal-button.png',
+        price: '₱20,000.00',
+      },
+      {
+        id: 14,
+        title: 'Jacket Crown',
+        description: 'A protective cover placed over a tooth to restore its shape and strength.',
+        image: '/src/assets/serviceimage/jacket-crown-button.png',
+        buttonImage: '/src/assets/button/jacket-crown-button.png',
+        price: '₱10,000.00 - ₱20,000.00',
+      },
+      {
+        id: 15,
+        title: 'Mouthguard',
+        description: 'A custom-made appliance to protect your teeth from damage during sports or nighttime grinding.',
+        image: '/src/assets/serviceimage/mouthguard-button.png',
+        buttonImage: '/src/assets/button/mouthguard-button.png',
+        price: '₱5,000.00',
+      },
+      {
+        id: 16,
+        title: 'Retainers',
+        description: 'A dental appliance used to maintain teeth alignment after orthodontic treatment.',
+        image: '/src/assets/serviceimage/retainers-button.png',
+        buttonImage: '/src/assets/button/retainers-button.png',
+        price: '₱5,000.00',
+      },
+    ];
+    
 
   const filteredServices = services.filter(service =>
     service.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -161,6 +170,7 @@ const HomePage = () => {
         </main>
 
         {/* @@@@@@@@@@@@@@@@@@@@@@@@  SERVICES   @@@@@@@@@@@@@@@@@@@@@@@@ */}
+       
         <section id="services" className="extra-info-container">
           <h2>Our Services</h2>
           <input
@@ -188,20 +198,24 @@ const HomePage = () => {
             </div>
             <div className="service-detail">
               {selectedService ? (
-                <>
+                <div className="service-detail-content">
                   <img src={selectedService.image} alt={selectedService.title} className="service-image" />
                   <div className="service-description">
-                    <h3>{selectedService.title}</h3>
-                    <p>{selectedService.description}</p>
+                    <h3><strong>{selectedService.title}</strong></h3>
+                  <div className="service-price">
+                      <span className="price-label">Base Price</span>
+                      <span className="price-value"><strong>{selectedService.price}</strong></span> {/* Displaying Price */}
                   </div>
-                </>
+                  <p><strong>{selectedService.description}</strong></p>
+                </div>
+                </div>
               ) : (
                 <p>Select a service to see the details</p>
               )}
             </div>
+
           </div>
         </section>
-
         {/* @@@@@@@@@@@@@@@@@@@@@@@@  WHY DDC   @@@@@@@@@@@@@@@@@@@@@@@@ */}
 
         <section id="why-ddc" className="why-ddc">
