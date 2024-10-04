@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/SignUp.css';
-import logo from '/src/assets/logo.png'; 
+import logo from '/src/assets/logo.png';
 import sideImage from '/src/assets/signage.jpg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const SignUp = () => {
+const Login = () => {
     const [isVisible, setIsVisible] = useState(true); // State to control visibility
     const navigate = useNavigate(); // Initialize navigation function
 
@@ -28,40 +28,43 @@ const SignUp = () => {
     if (!isVisible) return null; // If not visible, return null to remove the component from the DOM
 
     return (
-        <div className="login-page">
-            <div className="left-column">
-                <div className="login-container">
-                    <div className="login-header">
-                        <img src={logo} alt="Logo" className="login-logo" />
-                    </div>
-                    <form>
-                        <h1><strong>Sign up</strong></h1>
-                        <input type="text" placeholder="Full Name" required />
-                        <input type="text" placeholder="Email or Phone Number" required />
-                        <input type="password" placeholder="Password" required />
-                        <input type="password" placeholder="Confirm Password" required />
-                        <div className="checkbox-container">
-                                <input type="checkbox" id="remember-me" className="remember-me-checkbox" />
-                                <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
-                                <a href="#" className="terms-and-conditions"><strong>Terms and Conditions</strong></a>
-                        </div>
-                        <button type="submit" className="login-button">Sign up</button>
-                    </form>
-                    <div className="signup-footer">
-                        <span>Already have an account? <strong>Log in here</strong></span>
-                        <button className="next-button" onClick={handleNextButtonClick}><i className="bi bi-chevron-left"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div className="right-column">
+        <div className="signup-page">
+            <div className="left-columnp">
                 <div className="backhome-container">
-                    <button className="back-button" onClick={handleBackClick}><i className="bi bi-arrow-left-circle-fill"></i></button>
-                    <button className="home-button" onClick={handleHomeClick}><i className="bi bi-house-fill"></i></button>
+                    <button className="back-button" onClick={handleBackClick}><i class="bi bi-arrow-left-circle-fill"></i></button>
+                    <button className="home-button" onClick={handleHomeClick}><i class="bi bi-house-fill"></i></button>
                 </div>
                 <img src={sideImage} alt="Side" className="side-image" />
+            </div>
+            <div className="right-columnp">
+                <form>
+                    <div className="signup-header">
+                        <img src={logo} alt="Logo" className="login-logo" />
+                    </div>
+                    <h1><strong>Create Account</strong></h1>
+                    <div className="input-grp">
+                        <input type="text" placeholder="First Name" required />
+                        <input type="text" placeholder="Last Name" required />
+                    </div>
+                    <input type="text" placeholder="Email or Phone Number" required />
+                    <div className="input-grp">
+                        <input type="password" placeholder="Password" required />
+                        <input type="password" placeholder="Confirm Password" required />
+                    </div>
+                    <div className="checkbox-container">
+                        <input type="checkbox" id="remember-me" className="remember-me-checkbox" />
+                        <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
+                        <a href="#" className="terms-and-conditions"><strong>Terms and Conditions</strong></a>
+                    </div>
+                    <button type="submit" className="signup-button">Sign up</button>
+                </form>
+                <div className="signup-footer">
+                    <span>Already have an account? <strong>Log in here</strong></span>
+                    <button className="next-button" onClick={handleNextButtonClick}><i class="bi bi-chevron-left"></i></button>
+                </div>
             </div>
         </div>
     );
 };
 
-export default SignUp;
+export default Login;

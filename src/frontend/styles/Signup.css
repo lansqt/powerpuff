@@ -1,28 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
-body, html, #root {
-    scroll-behavior: smooth;
-    font-family: 'Nunito', sans-serif;
-    background-color: white;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    
+html, body, #root {
+  scroll-behavior: smooth;
+  font-family: 'Nunito', sans-serif;
+  background-color: black;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.login-page {
-    display: flex;
-    height: 100vh; 
+.signup-page {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT COLUMN */
+
+.left-columnp {
+  position: relative;
+  width: 65%;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
 }
 
 .backhome-container {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 2; /* button above image */
+  z-index: 2;
   display: flex;
-  gap: 5px; /* space between back & home */
+  gap: 5px;
 }
 
 .back-button,
@@ -32,15 +44,13 @@ body, html, #root {
   font-size: 20px;
   cursor: pointer;
   background-color: transparent;
+  padding: 5px 5px;
+  transition: color 0.3s;
 }
 
 .back-button:hover,
 .home-button:hover {
   color: white;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  background-color: transparent;
 }
 
 .side-image {
@@ -48,34 +58,30 @@ body, html, #root {
   height: 100vh;
   object-fit: cover;
   position: relative;
-  z-index: 1; /* image below buttons */
+  z-index: 1;
 }
 
-.left-column {
-  width: 35%; /* Same width as the original right column */
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+/* RIGHT COLUMN */
 
-.right-column {
-  width: 65%; /* Same width as the original left column */
+.right-columnp {
+  width: 35%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
+  flex-direction: column;
 }
 
-.login-header .login-logo {
-    display: block;
-    margin: 0 auto;
-    width: 150px; 
+.signup-header .login-logo {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
 }
 
-.login-button, .next-button {
-    width: 100%; 
+.signup-button,
+.next-button {
+  width: 100%;
 }
 
 form h1 {
@@ -86,30 +92,25 @@ form h1 {
   margin-bottom: 5px;
 }
 
-.login-container {
-  padding: 0px;
-  width: 500px; /* 400 yung dati */
-}
-
 .login-logo {
-  width: 100px; /* Adjusted size for better visibility */
+  width: 100px;
   height: auto;
-  margin-bottom: 0px; /* Space below the logo */
+  margin-bottom: 0px;
 }
 
 .next-button {
-  width: 20px; /* Width of the button */
-  height: 20px; /* Height of the button (same as width for a circle) */
-  border-radius: 50%; /* Makes the button circular */
-  background-color: #9cc473; /* Background color (customize as needed) */
-  color: white; /* Text color */
-  border: none; /* No border */
-  display: flex; /* Use flex to center content */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  font-size: 10px; /* Font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Transition effect on hover */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #9cc473;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
   margin-left: 0px;
 }
 
@@ -118,34 +119,51 @@ form h1 {
   background-color: #bad69e;
 }
 
-.login-header {
+.signup-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
-input[type="text"],
+.input-grp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.input-grp input[type="text"],
 input[type="password"] {
   font-family: 'Nunito', sans-serif;
-  width: 100%;
-  padding: 12px; 
-  margin: 10px 0;
-  border: 1px solid #d1d1d1; 
-  border-radius: 4px; 
-  box-sizing: border-box; 
+  width: 48%;
+  padding: 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-sizing: border-box;
   transition: border-color 0.3s ease;
+}
+
+input[type="text"] {
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  margin: 5px 0;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-color: #9cc473; 
-  outline: none; 
+  border-color: #9cc473;
+  outline: none;
 }
 
-.login-button {
+.signup-button {
   font-family: 'Nunito', sans-serif;
-  padding: 10px 100px;
+  padding: 10px 139px;
   border-radius: 20px;
   border: none;
   font-size: 14px;
@@ -153,82 +171,87 @@ input[type="password"]:focus {
   color: white;
   border: 2px solid #9cc473;
   margin-top: 15px;
-  
 }
 
-.login-button:hover {
- background-color: transparent;
- border: 2px solid #9cc473;
- color:#9cc473;
+.signup-button:hover {
+  background-color: transparent;
+  border: 2px solid #9cc473;
+  color: #9cc473;
 }
 
 .signup-footer {
   background-color: #a8a8a8;
-  padding: 15px 15px; 
+  padding: 10px;
   color: white;
-  margin-top: -59px;
+  margin-top: 65px;
   font-size: 14px;
-  display: flex; /* Use flexbox to align items */
-  align-items: center; /* Center items vertically */
-  justify-content: flex-end; /* Space between elements */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .account-text {
-  margin: 20px 50px; /* Space above and below */
-  font-size: 14px; /* Smaller text size */
+  margin: 20px 50px;
+  font-size: 14px;
   color: #a8a8a8;
   text-align: center;
 }
 
-.create-account,
-.terms-and-conditions  {
-  color: #9cc473; /* Change color to distinguish clickable link */
+.create-account {
+  color: #9cc473;
   text-decoration: none;
-  font-weight: 500; /* Medium weight for better readability */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.create-account:hover,
-.terms-and-conditions:hover {
+.create-account:hover {
   color: #bad69e;
 }
 
 .checkbox-container {
   display: flex;
-  align-items: center; /* Center checkbox and label vertically */
-  margin-top: 10px; /* Space above the checkbox */
+  align-items: center;
+  margin-top: 10px;
 }
 
 .remember-me-checkbox {
-  width: 18px; /* Adjust the width of the checkbox */
-  height: 18px; /* Adjust the height of the checkbox */
-  margin-right: 10px; /* Space between checkbox and label */
-  cursor: pointer; /* Change cursor on hover */
-  accent-color: #9cc473; /* Change the color of the checkbox */
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: #9cc473;
 }
 
 .remember-me-label {
-  font-size: 14px; /* Font size for the label */
-  color: #333; /* Label color */
-  cursor: pointer; /* Change cursor on hover */
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
 }
 
 .terms-and-conditions {
-  margin-left: 3px;
-  color: #9cc473; /* Change color for link */
-  text-decoration: none; /* Remove underline */
+  margin-left: 5px;
   font-size: 14px;
+  color: #9cc473;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.terms-and-conditions:hover {
+  color: #bad69e;
 }
 
 form {
-padding-left: 60px;
-padding-right: 60px;
-/* padding-bottom: 0.01px; */
-padding-bottom:60px;
+  padding-top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  flex: 1;
 }
 
 .emphasize {
-    font-style: italic;
-    font-weight: 400;
+  font-style: italic;
+  font-weight: 400;
 }
