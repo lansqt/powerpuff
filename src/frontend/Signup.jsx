@@ -80,11 +80,14 @@ const Signup = () => {
                     <button className="next-button" onClick={handleNextButtonClick}><i class="bi bi-chevron-left"></i></button>
                 </div>
             </div>
-            <Terms 
-                isOpen={isModalOpen}
-                onClose={handleModalClose}
-                onAccept={handleAccept}
-            />
+
+            {/* Conditionally render the Terms component */}
+            {isModalOpen && (
+                <Terms 
+                    onAccept={handleAccept}
+                    onDecline={handleModalClose} 
+                />
+            )}
         </div>
     );
 };
