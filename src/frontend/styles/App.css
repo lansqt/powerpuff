@@ -497,8 +497,13 @@ html, body, #root {
   transform: scale(1.05);
 }
 
-/* Contact Us */
 
+
+
+
+
+
+/* Contact Us */
 .contact-us {
   padding: 40px;
   background-color: #f8f8f8;
@@ -513,47 +518,79 @@ html, body, #root {
 
 .contact-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.contact-form, .contact-map, .clinic-schedule {
-  flex: 1;
-  margin: 10px;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.contact-form h2, .contact-map h2, .clinic-schedule h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.contact-form form {
-  display: flex;
   flex-direction: column;
 }
 
+ .contact-map {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  height: 100%;
+}
+
+
+.clinic-schedule {
+  margin: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  height: 100%;
+}
+.contact-form{
+  margin: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  height: 100%;
+  width: auto;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* Flex layout for label and input field */
 .form-group {
+  display: flex;
+  align-items: center; /* Vertically center label and input */
   margin-bottom: 15px;
 }
 
+/* Label styling to align left and set width */
 .form-group label {
-  display: block;
+  width: 80px; /* Set width for label */
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-right: 0px; /* Spacing between label and input */
+  text-align: left; /* Right-align the label to be close to the input */
 }
 
+/* Input fields and text area */
 .form-group input, .form-group textarea {
-  width: 100%;
-  padding: 10px;
+  flex-grow: 1;
+  padding: 3px;
+  width: fit-content;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
+  margin-left: 0px;
 }
 
+.form-group input {
+  height: 30px; /* Adjust height as needed */
+}
+
+.form-group textarea {
+  height: 150px; /* Adjust height as needed */
+  resize: none; /* Prevent resizing */
+}
+
+/* Submit button styling */
 .contact-submit-btn {
   background-color: #4CAF50;
   color: white;
@@ -561,25 +598,23 @@ html, body, #root {
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  margin-top: 10px;
 }
 
 .contact-submit-btn:hover {
   background-color: #45a049;
 }
 
-.contact-map {
-  text-align: center;
+/* Map Image and Clinic Schedule styling */
+.contact-map, .clinic-schedule {
+  margin-top: 0px;
+  
 }
 
 .map-image {
-  width: 100%;
+  width: 500px;
   height: auto;
   border-radius: 8px;
-}
-
-.clinic-schedule {
-  text-align: left;
-  margin-top: 30px;
 }
 
 .clinic-schedule ul {
@@ -588,14 +623,27 @@ html, body, #root {
 }
 
 .clinic-schedule li {
-  font-size: 18px;
+  font-size: 15px;
   padding: 5px 0;
+  text-align: left;
 }
 
 .clinic-schedule li strong {
   color: #333;
 }
 
+
+/* Add media queries to handle large screens */
+@media (min-width: 768px) {
+  .contact-container {
+    flex-direction: row; /* Side-by-side layout for larger screens */
+    justify-content: space-between;
+  }
+  .contact-form, .contact-map, .clinic-schedule {
+    flex: 1;
+    max-width: 500px;
+  }
+}
 
 /* Footer Styles */
 .footer {
