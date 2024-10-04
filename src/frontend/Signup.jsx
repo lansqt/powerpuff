@@ -5,7 +5,7 @@ import logo from '/src/assets/logo.png';
 import sideImage from '/src/assets/signage.jpg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-const Login = () => {
+const Signup = () => {
     const [isVisible, setIsVisible] = useState(true); // State to control visibility
     const navigate = useNavigate(); // Initialize navigation function
 
@@ -67,4 +67,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;
