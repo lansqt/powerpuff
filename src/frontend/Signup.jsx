@@ -4,13 +4,16 @@ import './styles/SignUp.css';
 import logo from '/src/assets/logo.png';
 import sideImage from '/src/assets/signage.jpg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import Terms from './components/Terms'; 
 
 const Signup = () => {
-    const [isVisible, setIsVisible] = useState(true); // State to control visibility
-    const navigate = useNavigate(); // Initialize navigation function
+    const [isVisible, setIsVisible] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);  // State to control modal visibility
+    const [termsAccepted, setTermsAccepted] = useState(false); // State for tracking if terms are accepted
+    const navigate = useNavigate();
 
     const handleClose = () => {
-        setIsVisible(false); // Hide the login container when exit button is clicked
+        setIsVisible(false);
     };
 
     const handleNextButtonClick = () => {
@@ -18,14 +21,28 @@ const Signup = () => {
     };
 
     const handleBackClick = () => {
-        navigate(-1); // Go back to the previous page
+        navigate(-1);
     };
 
     const handleHomeClick = () => {
-        navigate('/'); // Navigate to the home page
+        navigate('/');
     };
 
-    if (!isVisible) return null; // If not visible, return null to remove the component from the DOM
+    const handleTermsClick = (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        setIsModalOpen(true);  // Open the modal
+    };
+
+    const handleModalClose = () => {
+        setIsModalOpen(false);  // Close the modal
+    };
+
+    const handleAccept = () => {
+        setTermsAccepted(true);  // User accepts the terms
+        setIsModalOpen(false);   // Close the modal
+    };
+
+    if (!isVisible) return null;
 
     return (
         <div className="signup-page">
@@ -52,17 +69,22 @@ const Signup = () => {
                         <input type="password" placeholder="Confirm Password" required />
                     </div>
                     <div className="checkbox-container">
-                        <input type="checkbox" id="remember-me" className="remember-me-checkbox" />
+                        <input type="checkbox" id="remember-me" className="remember-me-checkbox" disabled={!termsAccepted} />
                         <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
-                        <a href="#" className="terms-and-conditions"><strong>Terms and Conditions</strong></a>
+                        <a href="#" className="terms-and-conditions" onClick={handleTermsClick}><strong>Terms and Conditions</strong></a>
                     </div>
-                    <button type="submit" className="signup-button">Sign up</button>
+                    <button type="submit" className="signup-button" disabled={!termsAccepted}>Sign up</button>
                 </form>
                 <div className="signup-footer">
                     <span>Already have an account? <strong>Log in here</strong></span>
                     <button className="next-button" onClick={handleNextButtonClick}><i class="bi bi-chevron-left"></i></button>
                 </div>
             </div>
+            <Terms 
+                isOpen={isModalOpen}
+                onClose={handleModalClose}
+                onAccept={handleAccept}
+            />
         </div>
     );
 };
