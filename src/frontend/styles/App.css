@@ -205,7 +205,7 @@ html, body, #root {
 .search-input {
   width: 50%;
   padding: 10px;
-  margin: 0 0 0 570px;
+  margin: 20px auto; /* Centering the input */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -250,14 +250,17 @@ html, body, #root {
 }
 
 .button img.button-image {
-  width: auto; /* Adjust width of the image */
-  height: 40px; /* Adjust height of the image */
+  max-width: 30px; /* Adjust as necessary */
+  height: auto; /* Maintain aspect ratio */
   margin-left: 10px; /* Space between text and image */
 }
-
+.button:hover {
+  border-color: #bddf9c; /* Change border color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
 .button:hover,
 .button.active {
-  background-color: #9cc473;
+  background-color: #bddf9c;
   color: white;
 }
 
@@ -267,11 +270,12 @@ html, body, #root {
 
 @media (max-width: 768px) {
   .button-list {
-    max-height: 240px; /* Adjust for smaller screens if needed */
+      flex-basis: 100%; /* Stacking on mobile */
+      max-height: none; /* Remove max height on mobile */
   }
 }
 
-
+/* Service Detail */
 /* Service Detail */
 .service-detail {
   flex-basis: 60%;
@@ -279,30 +283,65 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.service-detail-content {
+  display: flex; /* Use flexbox for layout */
+  align-items: flex-start; /* Align items at the start */
+  width: 100%;
+  margin-top: 25px; 
+  margin-left: 40px;/* Full width of the container */
 }
 
 .service-detail img.service-image {
-  max-width: 100%;
-  max-height: 200px;
+  width: 300px; /* Fixed width for uniform size */
+  height: auto; /* Fixed height for uniform size */
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-right: 40px;
+  padding: 5px; /* Space between image and text */
+  border: 2px solid #000000;
 }
 
 .service-detail .service-description {
   font-size: 18px;
   color: #333;
-  max-width: 600px;
-  text-align: center;
+  max-width: 340px; /* Ensure description does not exceed this width */
+  text-align: left; /* Align text to the left */
 }
 
 .service-detail .service-description h3 {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 10px;
+  margin-top: 0px;
 }
 
 .service-detail .service-description p {
   line-height: 1.6;
 }
+
+/* Price Styling */
+.service-detail .price-value {
+  font-size: 17px; /* Slightly larger font */
+  color: #000000; /* Change text color for better contrast */
+  background-color: #f1f1f1; /* Set background to highlight the price */
+  padding: 10px 15px; /* Add padding for a badge effect */
+  border-radius: 100px; /* Rounded corners */
+  display: inline-block; /* Make it behave like a badge */
+  margin-top: 0px; /* Adjust margin */
+}
+
+/* Price Label */
+.service-detail .price-label {
+  font-size: 17px; /* Same size as price */
+  color: #000000; /* Color for the price label */
+  margin-right: 20px; /* Space between label and price */
+  display: inline-block; /* Ensure it's on the same line as price */
+}
+  
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -316,8 +355,10 @@ html, body, #root {
 
   .service-detail {
     flex-basis: 100%;
-  }
+    padding: 10px; /* Reduce padding on mobile for better space usage */
 }
+  }
+
 
 /* Why DDC Section */
 .why-ddc {
