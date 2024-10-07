@@ -28,6 +28,7 @@ const Signup = () => {
     };
 
     const handleModalClose = () => {
+        setTermsAccepted(false); // Declining should uncheck the checkbox
         setIsModalOpen(false);  // Close the modal
     };
 
@@ -50,6 +51,15 @@ const Signup = () => {
     const handleOtpClose = () => {
         setOtpVisible(false);  // Close OTP modal
     };
+
+    // Toggle checkbox when clicked
+    const handleCheckboxClick = () => {
+        setTermsAccepted(prevState => !prevState); // Toggle state
+    };
+
+    const handleNextButtonClick = () => {
+        navigate('/login');
+    }
 
     if (!isVisible) return null;
 
@@ -78,7 +88,14 @@ const Signup = () => {
                         <input type="password" placeholder="Confirm Password" required />
                     </div>
                     <div className="checkbox-container">
-                        <input type="checkbox" id="remember-me" className="remember-me-checkbox" disabled={!termsAccepted} />
+                        {/* When the checkbox is clicked, it toggles the termsAccepted state */}
+                        <input 
+                            type="checkbox" 
+                            id="remember-me" 
+                            className="remember-me-checkbox" 
+                            checked={termsAccepted} // Checkbox checked state reflects if terms are accepted
+                            onChange={handleCheckboxClick}  // Toggle on checkbox click
+                        />
                         <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
                         <a href="#" className="terms-and-conditions" onClick={handleTermsClick}><strong>Terms and Conditions</strong></a>
                     </div>
@@ -94,6 +111,7 @@ const Signup = () => {
 
                 <div className="signup-footer">
                     <span>Already have an account? <strong>Log in here</strong></span>
+                    <button className="next-button" onClick={handleNextButtonClick}><i class="bi bi-chevron-left"></i></button>
                 </div>
             </div>
 
@@ -101,7 +119,7 @@ const Signup = () => {
             {isModalOpen && (
                 <Terms 
                     onAccept={handleAccept}
-                    onDecline={handleModalClose} 
+                    onDecline={handleModalClose}  // Decline button will uncheck the checkbox
                 />
             )}
 

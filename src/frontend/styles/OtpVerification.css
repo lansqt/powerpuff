@@ -67,7 +67,6 @@
     color: #bad69e;
 }
 
-/* Matching the button design from terms-buttons, but renamed to verification-buttons */
 .verification-buttons {
     display: flex;
     justify-content: space-between;
