@@ -297,8 +297,12 @@ const HomePage = () => {
             {/* Map Image */}
             <div className="contact-map">
               <h2>Visit Us</h2>
-              <img src="/src/assets/map.png" alt="Clinic Location" className="map-image" />
-              <p>509, Bayan Luma 3, Imus, Cavite, Philippines</p>
+              
+              {/* Make the map image and address clickable */}
+              <a href="https://www.google.com/maps/place/Dominguez+Dental+Clinic,+Dr.+Carites+M.Dominguez+%2F+Dr.+Danessa+M.+Dominguez/@14.4166013,120.9350521,16z/data=!4m6!3m5!1s0x3397d2fc54fb3607:0xba8a1ff58295d714!8m2!3d14.416551!4d120.935166!16s%2Fg%2F1pzsxsrhl?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                <img src="/src/assets/map.png" alt="Clinic Location" className="map-image" />
+                <p>509, Bayan Luma 3, Imus, Cavite, Philippines</p>
+              </a>
             </div>
 
             {/* Clinic Schedule */}
