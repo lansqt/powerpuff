@@ -4,6 +4,7 @@ import './styles/App.css';
 import Header from './components/Header';
 import Login from './Login'
 import Signup from './Signup';
+import AdminDashboard from './admin/AdminDashboard';
 
 const HomePage = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -372,6 +373,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </Router>
   );
