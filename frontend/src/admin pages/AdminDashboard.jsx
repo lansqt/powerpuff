@@ -1,7 +1,6 @@
-// src/frontend/pages/AdminDashboard.jsx
 import React from 'react';
-import "/src/frontend/styles/AdminDashboard.css";
-import AdminSideBar from '/src/frontend/components/AdminSideBar';
+import "../../styles/AdminDashboard.css";
+import AdminSideBar from '../components/AdminSideBar';
 
 const AdminDashboard = () => {
     const handleLogout = () => {

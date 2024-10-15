@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles/Login.css';
+import '../../styles/Login.css';
 import logo from '/src/assets/logo.png';
 import sideImage from '/src/assets/signage.jpg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import ForgotPassword from './components/ForgotPassword'; // Import the ForgotPassword modal component
+import ForgotPassword from '../components/ForgotPassword'; // Import the ForgotPassword modal component
 
 const Login = () => {
     const [isVisible, setIsVisible] = useState(true); // State to control visibility
     const [forgotPasswordVisible, setForgotPasswordVisible] = useState(false); // State for controlling Forgot Password modal
     const navigate = useNavigate(); // Initialize navigation function
-
-    const handleClose = () => {
-        setIsVisible(false); // Hide the login container when exit button is clicked
-    };
 
     const handleNextButtonClick = () => {
         navigate('/signup');
@@ -35,6 +31,10 @@ const Login = () => {
     const handleForgotPasswordClose = () => {
         setForgotPasswordVisible(false); // Close the Forgot Password modal
     };
+
+    const handleLoginClick = (e) => {
+        e.preventDefault()
+    }
 
     if (!isVisible) return null; // If not visible, return null to remove the component from the DOM
 
@@ -64,7 +64,7 @@ const Login = () => {
                         <label htmlFor="remember-me" className="remember-me-label">Remember Me</label>
                         <a href="#" className="forgot-password" onClick={handleForgotPasswordClick}><strong>Forgot Password?</strong></a>
                     </div>
-                    <button type="submit" className="login-button">Log In</button>
+                    <button type="submit" className="login-button" onClick={handleLoginClick}>Log In</button>
                 </form>
                 <div className="login-footerp">
                     <span>Don't have an account? <strong>Create New</strong></span>

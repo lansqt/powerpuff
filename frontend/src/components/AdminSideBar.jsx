@@ -1,7 +1,7 @@
 // src/frontend/components/AdminSideBar.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../styles/AdminSideBar.css";
+import "../../styles/AdminSideBar.css";
 
 const AdminSideBar = ({ handleLogout }) => {
     const navigate = useNavigate();

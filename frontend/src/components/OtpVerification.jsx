@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/OtpVerification.css';
+import '../../styles/OtpVerification.css';
 
 const OtpVerification = ({ onVerify, onClose, onResendCode }) => {
     const [otp, setOtp] = useState(new Array(6).fill('')); // For 6 OTP fields

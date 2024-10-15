@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/ForgotPassword.css';
+import '../../styles/ForgotPassword.css';
 
 const ForgotPassword = ({ onClose }) => {
     const [email, setEmail] = useState('');

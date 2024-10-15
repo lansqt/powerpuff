@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles/SignUp.css';
+import '../../styles/SignUp.css';
 import logo from '/src/assets/logo.png';
 import sideImage from '/src/assets/signage.jpg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Terms from './components/Terms';
-import OtpVerification from './components/OtpVerification';
+import Terms from '../components/Terms';
+import OtpVerification from '../components/OtpVerification';
 
 const Signup = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -99,14 +99,7 @@ const Signup = () => {
                         <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
                         <a href="#" className="terms-and-conditions" onClick={handleTermsClick}><strong>Terms and Conditions</strong></a>
                     </div>
-                    <button 
-                        type="submit" 
-                        className="signup-button" 
-                        disabled={!termsAccepted} 
-                        onClick={handleSignUpClick}
-                    >
-                        Sign up
-                    </button>
+                    <button type="submit" className="signup-button" disabled={!termsAccepted} onClick={handleSignUpClick}>Sign up</button>
                 </form>
 
                 <div className="signup-footer">
