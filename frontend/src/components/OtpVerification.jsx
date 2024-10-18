@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../../styles/OtpVerification.css';
 
-const OtpVerification = ({ onVerify, onClose, onResendCode }) => {
+const OtpVerification = ({ email, onVerify, onClose, onResendCode }) => {
     const [otp, setOtp] = useState(new Array(6).fill('')); // For 6 OTP fields
 
     // Handle OTP input
@@ -17,12 +18,32 @@ const OtpVerification = ({ onVerify, onClose, onResendCode }) => {
         }
     };
 
-    const handleVerifyClick = () => {
+    const handleVerifyClick = async () => {
         const otpCode = otp.join(''); // Join the 6 fields into a single OTP string
-        if (otpCode === '123456') { // Example OTP verification logic
-            onVerify();
+
+        if (otpCode.length === 6) {
+            try {
+                // Send the OTP code to the server for verification using axios
+                const response = await axios.post('http://localhost:8000/verify-otp', {
+                    email: email,
+                    otp: otpCode,
+                    otpToken
+                });
+
+                if (response.data.success) {
+                    // OTP is valid, proceed with further actions
+                    toast.success('OTP verified successfully.');
+                    onVerify();
+                } else {
+                    toast.error(response.data.message || 'Invalid OTP. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error during OTP verification:', error);
+                toast.error('Error occurred while verifying OTP.');
+            }
         } else {
-            alert('Invalid OTP, please try again.');
+            // If the OTP is not 6 digits, display an alert
+            alert('Invalid OTP. Please enter all 6 digits.');
         }
     };
 
@@ -32,7 +53,6 @@ const OtpVerification = ({ onVerify, onClose, onResendCode }) => {
                 <h2>OTP Verification</h2>
                 <p>Enter the code sent to your email or phone</p>
 
-                {/* Separate fields for OTP */}
                 <div className="otp-inputs">
                     {otp.map((value, index) => (
                         <input

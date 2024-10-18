@@ -6,6 +6,8 @@ import sideImage from '/src/assets/signage.jpg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Terms from '../components/Terms';
 import OtpVerification from '../components/OtpVerification';
+import axios from 'axios'
+import { toast } from 'react-hot-toast';
 
 const Signup = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -13,6 +15,15 @@ const Signup = () => {
     const [termsAccepted, setTermsAccepted] = useState(false); // State for tracking if terms are accepted
     const [otpVisible, setOtpVisible] = useState(false);  // State for showing OTP modal
     const navigate = useNavigate();
+
+    const [data, setData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+    })
+
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleBackClick = () => {
         navigate(-1);
@@ -37,15 +48,60 @@ const Signup = () => {
         setIsModalOpen(false);   // Close the modal
     };
 
-    const handleSignUpClick = (e) => {
+    const handleSignUpClick = async (e) => {
         e.preventDefault();
-        // Show the OTP Verification modal
-        setOtpVisible(true);
+
+        const { firstName, lastName, email, password } = data;
+        
+        if (password !== confirmPassword) {
+            toast.error('Passwords do not match.');
+            return;
+        }
+
+        try {
+            const response = await axios.post('http://localhost:8000/signup', {
+                firstName, lastName, email, password
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if(response.data.error) {
+                toast.error(response.data.error);
+            } else {
+                setData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    password: '',
+                });
+                setConfirmPassword('');
+                toast.success('Sign up successful. Please check your email for the OTP.');
+                setOtpVisible(true);
+            }
+        } catch (error) {
+            console.error(error)
+            toast.error('Error occurred during sign up.');
+        }
     };
 
-    const handleOtpVerified = () => {
-        // OTP was successfully verified, now navigate to login
-        navigate('/login');
+    const handleOtpVerified = async (otpCode) => {
+        try {
+            const response = await axios.post('http:localhost:8000/verify-otp', { 
+                email: data.email, 
+                otp: otpCode 
+            });
+
+            if (response.data.message) {
+                toast.success(response.data.message);
+                navigate('/login');
+            } else {
+                toast.error('Invalid OTP. Please try again.');
+            } 
+        } catch (error) {
+            console.error(error);
+            toast.error('Error occurred while verifying OTP.');
+        }
     };
 
     const handleOtpClose = () => {
@@ -73,33 +129,32 @@ const Signup = () => {
                 <img src={sideImage} alt="Side" className="side-image" />
             </div>
             <div className="right-columnp">
-                <form>
+                <form onSubmit={handleSignUpClick}>
                     <div className="signup-header">
                         <img src={logo} alt="Logo" className="login-logo" />
                     </div>
                     <h1><strong>Create Account</strong></h1>
                     <div className="input-grp">
-                        <input type="text" placeholder="First Name" required />
-                        <input type="text" placeholder="Last Name" required />
+                        <input type="text" placeholder="First Name" value={data.firstName} onChange={(e) => setData({...data, firstName: e.target.value})} required />
+                        <input type="text" placeholder="Last Name" value={data.lastName} onChange={(e) => setData({...data, lastName: e.target.value})} required />
                     </div>
-                    <input type="text" placeholder="Email or Phone Number" required />
+                    <input type="email" placeholder="Email" value={data.email} onChange={(e) => setData({...data, email: e.target.value})} required />
                     <div className="input-grp">
-                        <input type="password" placeholder="Password" required />
-                        <input type="password" placeholder="Confirm Password" required />
+                        <input type="password" placeholder="Password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})} required />
+                        <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
                     </div>
                     <div className="checkbox-container">
-                        {/* When the checkbox is clicked, it toggles the termsAccepted state */}
                         <input 
                             type="checkbox" 
                             id="remember-me" 
                             className="remember-me-checkbox" 
-                            checked={termsAccepted} // Checkbox checked state reflects if terms are accepted
-                            onChange={handleCheckboxClick}  // Toggle on checkbox click
+                            checked={termsAccepted} 
+                            onChange={handleCheckboxClick}  
                         />
                         <label htmlFor="remember-me" className="remember-me-label">I accept the</label>
                         <a href="#" className="terms-and-conditions" onClick={handleTermsClick}><strong>Terms and Conditions</strong></a>
                     </div>
-                    <button type="submit" className="signup-button" disabled={!termsAccepted} onClick={handleSignUpClick}>Sign up</button>
+                    <button type="submit" className="signup-button" disabled={!termsAccepted}>Sign up</button>
                 </form>
 
                 <div className="signup-footer">
@@ -108,7 +163,6 @@ const Signup = () => {
                 </div>
             </div>
 
-            {/* Conditionally render the Terms component */}
             {isModalOpen && (
                 <Terms 
                     onAccept={handleAccept}
@@ -116,9 +170,9 @@ const Signup = () => {
                 />
             )}
 
-            {/* Conditionally render the OTP Verification modal */}
             {otpVisible && (
-                <OtpVerification 
+                <OtpVerification
+                    email={data.email}
                     onVerify={handleOtpVerified} 
                     onClose={handleOtpClose}
                 />

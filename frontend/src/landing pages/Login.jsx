@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Login.css';
 import logo from '/src/assets/logo.png';
@@ -34,6 +35,7 @@ const Login = () => {
 
     const handleLoginClick = (e) => {
         e.preventDefault()
+        axios.get('/')
     }
 
     if (!isVisible) return null; // If not visible, return null to remove the component from the DOM
