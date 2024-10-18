@@ -3,7 +3,7 @@
 /* Sidebar styling */
 .sidebar {
     width: 235px;
-    background-color: #bad69e;
+    background-color: #f8f9fa;
     color: #000000;
     padding: 15px;
     display: flex;
@@ -20,7 +20,7 @@
 }
 
 .sidebar-header h2 {
-    color: #fff;
+    color: #9cc473;
     font-size: 20px; /* Adjusted font size */
     margin: 0; /* Remove default margin */
 }
@@ -44,7 +44,7 @@
 .nav-list li {
     padding: 15px 10px;
     margin: 5px 0;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     border-radius: 5px;
     cursor: pointer;
     text-align: left;
@@ -55,11 +55,12 @@
 }
 
 .nav-list li:hover {
-    background-color: #cacaca;
+    background-color: #e1f0d3;
 }
 
 .nav-list li:active {
-    background-color: #a8a8a8;
+    background-color: #9cc473;
+    color: white;
 }
 
 .nav-list li + li {
@@ -74,7 +75,7 @@
 .logout li {
     list-style: none;
     padding: 15px 10px;
-    background-color: #b9b0b0;
+    background-color: #9cc473;
     color: white;
     border-radius: 5px;
     cursor: pointer;
