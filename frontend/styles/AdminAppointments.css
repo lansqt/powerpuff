@@ -1,0 +1,22 @@
+/* Admin Dashboard Styles */
+.admin-appointments {
+    display: flex;
+    height: 100vh;
+}
+
+/* Main content styling */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+.main-content h1 {
+    font-size: 28px;
+    color: #343a40;
+}
+
+.main-content p {
+    color: #6c757d;
+    font-size: 18px;
+}
