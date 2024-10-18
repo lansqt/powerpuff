@@ -1,14 +1,14 @@
 /* Admin Dashboard Styles */
-.admin-dashboard {
+.admin-appointments {
     display: flex;
     height: 100vh;
 }
 
 /* Main content styling */
-.main-content-dashboard {
+.main-content-appointments {
     flex-grow: 1;
     padding: 40px;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .main-content h1 {

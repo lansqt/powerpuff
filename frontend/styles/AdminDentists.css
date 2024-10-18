@@ -1,11 +1,11 @@
 /* Admin Dashboard Styles */
-.admin-dashboard {
+.admin-dentists {
     display: flex;
     height: 100vh;
 }
 
 /* Main content styling */
-.main-content-dashboard {
+.main-content-dentists {
     flex-grow: 1;
     padding: 40px;
     background-color: #fff;
