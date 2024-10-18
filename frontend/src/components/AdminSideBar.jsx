@@ -1,15 +1,8 @@
-// src/frontend/components/AdminSideBar.jsx
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "../../styles/AdminSideBar.css";
 
 const AdminSideBar = ({ handleLogout }) => {
-    const navigate = useNavigate();
-
-    const handleNavigation = (path) => {
-        navigate(path);
-    };
-
     return (
         <div className="sidebar">
             <div className="sidebar-header">
@@ -17,20 +10,40 @@ const AdminSideBar = ({ handleLogout }) => {
                 <h2>Book with DDC</h2>
             </div>
             <ul className="nav-list">
-                <li onClick={() => handleNavigation('/admin')}>
-                    <i className="bi bi-grid"></i> Dashboard
+                <li>
+                    <NavLink 
+                        to="/admin" 
+                        className={({ isActive }) => isActive ? 'active-link' : ''}>
+                        <i className="bi bi-grid"></i> Dashboard
+                    </NavLink>
                 </li>
-                <li onClick={() => handleNavigation('/admin/appointments')}>
-                    <i className="bi bi-calendar-check"></i> Appointments
+                <li>
+                    <NavLink 
+                        to="/appointments" 
+                        className={({ isActive }) => isActive ? 'active-link' : ''}>
+                        <i className="bi bi-calendar-check"></i> Appointments
+                    </NavLink>
                 </li>
-                <li onClick={() => handleNavigation('/admin/dentists')}>
-                    <i className="bi bi-person-badge"></i> Dentists
+                <li>
+                    <NavLink 
+                        to="/dentists" 
+                        className={({ isActive }) => isActive ? 'active-link' : ''}>
+                        <i className="bi bi-person-badge"></i> Dentists
+                    </NavLink>
                 </li>
-                <li onClick={() => handleNavigation('/admin/patients')}>
-                    <i className="bi bi-people"></i> Patients
+                <li>
+                    <NavLink 
+                        to="/patients" 
+                        className={({ isActive }) => isActive ? 'active-link' : ''}>
+                        <i className="bi bi-people"></i> Patients
+                    </NavLink>
                 </li>
-                <li onClick={() => handleNavigation('/admin/transactions')}>
-                    <i className="bi bi-receipt"></i> Transactions
+                <li>
+                    <NavLink 
+                        to="/transactions" 
+                        className={({ isActive }) => isActive ? 'active-link' : ''}>
+                        <i className="bi bi-receipt"></i> Transactions
+                    </NavLink>
                 </li>
             </ul>
             <div className="logout">

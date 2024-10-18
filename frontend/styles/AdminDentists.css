@@ -1,14 +1,14 @@
 /* Admin Dashboard Styles */
-.admin-appointments {
+.admin-dentists {
     display: flex;
     height: 100vh;
 }
 
 /* Main content styling */
-.main-content-appointments {
+.main-content-dentists {
     flex-grow: 1;
     padding: 40px;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .main-content h1 {

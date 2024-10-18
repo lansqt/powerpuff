@@ -5,7 +5,7 @@
 }
 
 /* Main content styling */
-.main-content {
+.main-content-dashboard {
     flex-grow: 1;
     padding: 40px;
     background-color: #fff;

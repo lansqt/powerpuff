@@ -1,18 +1,18 @@
 import React from 'react';
-import "../../styles/AdminDashboard.css";
+import "../../styles/AdminPatients.css";
 import AdminSideBar from '../components/AdminSideBar';
 
-const AdminDashboard = () => {
+const AdminPatients = () => {
     const handleLogout = () => {
         // Handle logout logic
         navigate('/login');
     };
 
     return (
-        <div className="admin-dashboard">
+        <div className="admin-patients">
             <AdminSideBar handleLogout={handleLogout} />
-            <div className="main-content-dashboard">
-                <h1>Welcome to the Admin Dashboard</h1>
+            <div className="main-content-patients">
+                <h1>Welcome to the Admin Patients</h1>
                 <p>Select an option from the sidebar to manage the application.</p>
                 <p>Salamat Lance Nico Duave Dequina!</p>
             </div>
@@ -20,4 +20,4 @@ const AdminDashboard = () => {
     );
 };
 
-export default AdminDashboard;
+export default AdminPatients;

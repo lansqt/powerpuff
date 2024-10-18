@@ -11,7 +11,7 @@ const AdminAppointments = () => {
     return (
         <div className="admin-appointments">
             <AdminSideBar handleLogout={handleLogout} />
-            <div className="main-content">
+            <div className="main-content-appointments">
                 <h1>Welcome to the Admin Appointments</h1>
                 <p>Select an option from the sidebar to manage the application.</p>
                 <p>Salamat Lance Nico Duave Dequina!</p>

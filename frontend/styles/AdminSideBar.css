@@ -1,4 +1,24 @@
-/* src/frontend/styles/AdminSideBar.css */
+/* Remove underline and apply custom font color */
+.nav-list li a {
+    text-decoration: none;   /* Remove the underline */
+    color: #000000;          /* Set the font color to black */
+    display: block;          /* Ensure the clickable area is the whole block */
+    padding: 15px 10px;      /* Same padding as the list items */
+}
+
+.nav-list li a:hover {
+    background-color: #e1f0d3;
+    color: #000000;          /* Keep the text black on hover */
+    width: 235px;
+}
+
+.active-link {
+    background-color: #9cc473; /* Green background for active link */
+    color: white;
+    border-radius: 5px;
+    padding: 15px 10px;
+    width: 235px;
+}
 
 /* Sidebar styling */
 .sidebar {
@@ -8,29 +28,28 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Keep space between nav items and logout */
+    justify-content: space-between;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Sidebar header styling */
 .sidebar-header {
-    display: flex; /* Use flexbox to align logo and text */
-    align-items: center; /* Vertically center the items */
-    margin-bottom: 20px; /* Space below header */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .sidebar-header h2 {
     color: #9cc473;
-    font-size: 20px; /* Adjusted font size */
-    margin: 0; /* Remove default margin */
+    font-size: 20px;
+    margin: 0;
 }
 
-/* Logo styling */
-.logo-sidebar{
-    width: 70px; /* Adjust size as needed */
-    height: 70px; /* Adjust size as needed */
-    border-radius: 50%; /* Make it a circle */
-    margin-right: 10px; /* Space between logo and text */
+.logo-sidebar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 /* Navigation list */
@@ -42,34 +61,29 @@
 }
 
 .nav-list li {
-    padding: 15px 10px;
-    margin: 0px 0;
-    background-color: #f8f9fa;
+    margin: 0;
     border-radius: 5px;
     cursor: pointer;
     text-align: left;
 }
 
 .nav-list li i {
-    margin-right: 10px; /* Adds space between the icon and text */
+    margin-right: 10px;
 }
 
-.nav-list li:hover {
+.nav-list li a:hover {
     background-color: #e1f0d3;
 }
 
-.nav-list li:active {
+.nav-list li a:active, 
+.nav-list li a.active-link {
     background-color: #9cc473;
     color: white;
 }
 
-.nav-list li + li {
-    margin-top: 10px;
-}
-
 /* Logout button styling */
 .logout {
-    margin-top: auto; /* Pushes logout button to the bottom */
+    margin-top: auto;
 }
 
 .logout li {
@@ -79,13 +93,13 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    display: flex; /* Use flex to align icon and text */
-    align-items: center; /* Center the icon and text vertically */
-    justify-content: center; /* Center the items horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logout li i {
-    margin-right: 10px; /* Adds space between icon and text */
+    margin-right: 10px;
 }
 
 .logout li:hover {
