@@ -56,12 +56,13 @@ const AdminDentists = () => {
     {dentists.map((dentist) => (
         <div key={dentist.id} className="dentist-card">
             <img src={dentist.image} alt={dentist.name} className="dentist-image" />
+            <h2>{dentist.name} </h2>
             <div>
-                <h2>{dentist.name}</h2>
+                
                 <div className="dentist-info">
-                    <p><i className="bi bi-telephone"></i> Phone: (123) 456-7890</p>
-                    <p><i className="bi bi-envelope"></i> Email: dentist@example.com</p>
-                    <p><i className="bi bi-calendar"></i> Schedule: <button className="btn btn-link">View</button></p>
+                    <p><i className="bi bi-telephone"></i>  (123) 456-7890</p>
+                    <p><i className="bi bi-envelope"></i> dentist@example.com</p>
+                    <p><i className="bi bi-calendar-check"></i> M W TH F S | 10:00 am - 5:00 pm</p>
                 </div>
                 <div className="button-group">
                     <button className="btn btn-secondary" onClick={() => handleEditDentist(dentist.id)}>

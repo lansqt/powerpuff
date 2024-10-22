@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../styles/AdminDashboard.css";
 import AdminSideBar from '../components/AdminSideBar';
+import AdminHeader from '../components/AdminHeader';
 
 const AdminDashboard = () => {
     const handleLogout = () => {
@@ -9,6 +10,9 @@ const AdminDashboard = () => {
     };
 
     return (
+        <>
+    
+
         <div className="admin-dashboard">
             <AdminSideBar handleLogout={handleLogout} />
             <div className="main-content-dashboard">
@@ -17,6 +21,7 @@ const AdminDashboard = () => {
                 <p>Salamat Lance Nico Duave Dequina!</p>
             </div>
         </div>
+        </>
     );
 };
 

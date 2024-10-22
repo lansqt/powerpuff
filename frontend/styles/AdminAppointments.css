@@ -6,17 +6,142 @@
 
 /* Main content styling */
 .main-content-appointments {
-    flex-grow: 1;
+    flex-grow: 2;
     padding: 40px;
     background-color: #ffffff;
 }
 
-.main-content h1 {
+.main-content-appointments h1 {
     font-size: 28px;
     color: #343a40;
+    margin-bottom: 20px;
 }
 
-.main-content p {
-    color: #6c757d;
-    font-size: 18px;
+.appointments-list {
+    margin-top: 20px;
 }
+
+.appointments-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointments-list th, .appointments-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.appointments-list th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Filter button */
+.filter-button {
+    font-family: 'Nunito', sans-serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    cursor:pointer;
+    background-color: #9cc473;
+    color: #fdfdfd;
+    height: 40px;
+  
+}
+
+.filter-button:hover {
+    background-color: #9cc473;
+}
+
+/* Calendar section */
+.calendar-section {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-left: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.react-calendar {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal styling */
+.filter-modal {
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+.filter-modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.filter-section h3 {
+    margin-bottom: 10px;
+}
+.filter-buttons {
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+    margin-bottom: 20px; /* Space below the buttons */
+}
+
+
+.filter-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.apply-filter-button, .close-modal-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-filter-button:hover, .close-modal-button:hover {
+    background-color: #0056b3;
+}
+.reset-filter-button {
+    font-family: 'Nunito', sans-serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    cursor:pointer;
+    background-color: #ffffff25;
+    color: #65804a;
+    height: 40px;
+  }
+
+.reset-filter-button:hover {
+    background-color: #e1f7ce; /* Light red background on hover */
+    color: #72994a; /* Darker red text on hover */
+}
+
+
