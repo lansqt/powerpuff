@@ -10,6 +10,12 @@ import AdminTransactions from './admin pages/AdminTransactions';
 import AdminPatients from './admin pages/AdminPatients';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast'
+import PatientDashboard from './patient pages/PatientDashboard';
+import PatientAppointments from './patient pages/PatientAppointment';
+import PatientDentists from './patient pages/PatientDentists';
+import PatientServices from './patient pages/PatientServices';
+import PatientTransactions from './patient pages/PatientTransactions';
+import PatientProfile from './patient pages/PatientProfile';
 
 axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true
@@ -29,6 +35,13 @@ const App = () => {
         <Route path="/dentists" element={<AdminDentists />} />
         <Route path="/patients" element={<AdminPatients />} />
         <Route path="/transactions" element={<AdminTransactions />} />
+        <Route path="/patient" element={<PatientDashboard />} />
+        <Route path="/bookappointment" element={<PatientAppointments />} />
+        <Route path="/patient-dentists" element={<PatientDentists/>} />
+        <Route path="/patient-services" element={<PatientServices />} />
+        <Route path="/patient-transactions" element={<PatientTransactions />} />
+        <Route path="/patient-profile" element={<PatientProfile />} />
+
       </Routes>
       </>
   );

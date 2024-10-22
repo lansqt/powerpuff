@@ -48,6 +48,9 @@ const Signup = () => {
         setIsModalOpen(false);   // Close the modal
     };
 
+
+
+
     const handleSignUpClick = async (e) => {
         e.preventDefault();
 
@@ -59,13 +62,36 @@ const Signup = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8000/signup', {
-                firstName, lastName, email, password
-            }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+            // const {data} = await axios.post('http://localhost:8000/signupUser', {
+            //     firstName:firstName, lastName:lastName, email:email, password:password
+            // }, {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // });
+
+            const response= await axios.post('http://localhost:5173/signup/signUpUser2', {
+                firstName:firstName, lastName:lastName, email:email, password:password
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+
+              const response2= await axios.post('/signUpUser2', {
+                firstName:firstName, lastName:lastName, email:email, password:password
+              })
+              .then(function (response2) {
+                console.log(response2);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+              
+
+
             if(response.data.error) {
                 toast.error(response.data.error);
             } else {
@@ -80,14 +106,97 @@ const Signup = () => {
                 setOtpVisible(true);
             }
         } catch (error) {
-            console.error(error)
+            console.error(ex.message);
             toast.error('Error occurred during sign up.');
         }
     };
 
+    function signUpUser2 (firstName,lastName,email, password)
+    {
+        return true;
+    }
+
+        // Handle Sign-up with OTP
+    const signupUser = async (req, res) => {
+    try {
+        const { firstName, lastName, email, password } = req.body;
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Check inputs
+        if (!firstName || !lastName || !password || password.length < 8) {
+            return res.status(400).json({ error: 'Password must be at least 8 characters.' });
+        }
+        
+        const exist = await User.findOne({ email });
+        if (exist) {
+            // return res.json({ error: 'Email is already taken.' });
+            return res.status(400).json({ error: 'Email is already taken.' });
+        }
+
+        // Create user without verification
+        const otp = generateOTP();
+        const otpToken = generateOtpToken(email, otp);
+
+        const user = new User({
+            firstName, lastName, email, password: hashedPassword, otp, otpVerified: false, otpExpiry: Date.now() + 300000 // 5 min expiry
+        });
+
+        try {
+            await user.save();
+        } catch (err) {
+            console.log('Error saving user:', err);
+            return res.status(500).json({ error: 'Error saving user to database.' });
+        }
+
+        // Send OTP via email
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.EMAIL_PASSWORD
+            }
+        });
+
+        const mailOptions = {
+            from: process.env.EMAIL,
+            to: email,
+            subject: 'Book with DDC account verification.',
+            text: `Your OTP code is ${otp}`
+        };
+
+        // await transporter.sendMail(mailOptions, (error, info) => {
+        //     if (error) {
+        //         console.log("Error sending email: ", error);
+        //     } else {
+        //         console.log('Email sent: ' + info.response);
+        //     }
+        // });
+
+        try {
+            const info = await transporter.sendMail(mailOptions);
+            console.log('Email sent: ' + info.response);
+        } catch (error) {
+            console.log("Error sending email: ", error);
+            return res.status(500).json({ message: 'Error sending OTP email.' });
+        }
+        
+
+        res.status(201).json({
+            message: 'User created. OTP sent to your email.',
+            otpToken // Send the OTP token back to the client
+        });
+
+    } catch (error) {
+        console.error('Signup error: ', error);
+        res.status(500).json({
+            error: 'An error occurred during signup.'
+        });
+    }
+};
+
     const handleOtpVerified = async (otpCode) => {
         try {
-            const response = await axios.post('http:localhost:8000/verify-otp', { 
+            const response = await axios.post('http://localhost:8000/verify-otp', { 
                 email: data.email, 
                 otp: otpCode 
             });
@@ -129,7 +238,7 @@ const Signup = () => {
                 <img src={sideImage} alt="Side" className="side-image" />
             </div>
             <div className="right-columnp">
-                <form onSubmit={handleSignUpClick}>
+                <form id="signupform" onSubmit={handleSignUpClick}>
                     <div className="signup-header">
                         <img src={logo} alt="Logo" className="login-logo" />
                     </div>
@@ -159,7 +268,7 @@ const Signup = () => {
 
                 <div className="signup-footer">
                     <span>Already have an account? <strong>Log in here</strong></span>
-                    <button className="next-button" onClick={handleNextButtonClick}><i class="bi bi-chevron-left"></i></button>
+                    <button className="next-button" onClick={handleNextButtonClick}><i className="bi bi-chevron-left"></i></button>
                 </div>
             </div>
 
