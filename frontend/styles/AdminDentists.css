@@ -11,12 +11,136 @@
     background-color: #fff;
 }
 
-.main-content h1 {
+.main-content-dentists h1 {
     font-size: 28px;
     color: #343a40;
 }
 
-.main-content p {
+/* Flexbox for icon and title */
+.header-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the icon and the title */
+    margin-bottom: 20px;
+}
+
+.header-icon-title i {
+    font-size: 28px;
+    color: #343a40; /* Optional: to match the title color */
+}
+
+.header-icon-title h1 {
+    font-size: 28px;
+    color: #343a40;
+    margin: 0; /* Remove default margin */
+}
+
+/* Search and Add button styling */
+.dentists-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #6c757d;
+}
+
+/* Styling for Add Dentist button to match dentist card buttons */
+.add-dentist-btn {
+    font-family: 'Nunito', sans-serif;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    background-color: #9cc473;
+    color: white;
+    border: 2px solid #9cc473;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between text and icon */
+}
+
+.add-dentist-btn:hover {
+    background-color: transparent;
+    border: 2px solid #9cc473;
+    color: #9cc473;
+}
+
+/* Dentist card layout */
+.dentists-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dentist-card {
+    background-color: #f8f9fa;
+    border: 1px solid #cacaca;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between image and text */
+    text-align: left; /* Align text to the left */
+}
+
+.dentist-card img {
+    width: 100px;
+    height: 100px;
+}
+
+.dentist-card h2 {
     font-size: 18px;
+    color: #343a40;
+    margin: 0; /* Remove default margin */
+}
+
+/* Dentist info below the name */
+.dentist-info {
+    margin-top: 10px; /* Space above the info */
+    font-size: 14px; /* Font size for info */
+    color: #6c757d; /* Optional: muted color */
+}
+
+.dentist-card .button-group {
+    display: flex;
+    gap: 10px; /* Adds space between the buttons */
+    justify-content: flex-start; /* Align to the left */
+    margin-top: 10px;
+}
+
+.dentist-card button {
+    font-family: 'Nunito', sans-serif;
+    padding: 8px 12px; /* Adjust padding */
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    background-color: #9cc473;
+    color: white;
+    border: 2px solid #9cc473;
+}
+
+.dentist-card button:hover {
+    background-color: transparent;
+    border: 2px solid #9cc473;
+    color: #9cc473;
 }
