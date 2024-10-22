@@ -97,8 +97,7 @@
     border: 1px solid #cacaca;
     border-radius: 20px;
     padding: 20px;
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center vertically */
+    flex-direction: row; /* Use flexbox for layout */
     gap: 20px; /* Space between image and text */
     text-align: left; /* Align text to the left */
 }
@@ -119,6 +118,7 @@
     margin-top: 10px; /* Space above the info */
     font-size: 14px; /* Font size for info */
     color: #6c757d; /* Optional: muted color */
+    flex-direction: row;
 }
 
 .dentist-card .button-group {
