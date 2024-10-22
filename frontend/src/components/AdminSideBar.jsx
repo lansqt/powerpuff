@@ -40,6 +40,13 @@ const AdminSideBar = ({ handleLogout }) => {
                 </li>
                 <li>
                     <NavLink 
+                        to="/services" 
+                        className={({ isActive }) => isActive ? 'active-link' : ''}>
+                        <i className="bi bi-journal-medical"></i> Services
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
                         to="/transactions" 
                         className={({ isActive }) => isActive ? 'active-link' : ''}>
                         <i className="bi bi-receipt"></i> Transactions
