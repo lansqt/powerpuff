@@ -1,0 +1,32 @@
+/* Admin Dashboard Styles */
+.admin-services {
+    display: flex;
+    height: 100vh;
+}
+
+/* Main content styling */
+.main-content-services {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.container-admin {
+    max-width: 950px; /* Adjust as needed */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px; /* Inner spacing */
+    background-color: #f8f9fa; /* Optional: light background color */
+    border-radius: 5px; /* Optional: rounded corners */
+    min-height: 450px; /* Set a minimum height */
+}
+/* Main content heading */
+.main-content h1 {
+    font-size: 28px;
+    color: #343a40;
+}
+
+/* Main content paragraph */
+.main-content p {
+    color: #6c757d;
+    font-size: 18px;
+}

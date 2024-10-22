@@ -16,6 +16,7 @@ import PatientDentists from './patient pages/PatientDentists';
 import PatientServices from './patient pages/PatientServices';
 import PatientTransactions from './patient pages/PatientTransactions';
 import PatientProfile from './patient pages/PatientProfile';
+import AdminServices from './admin pages/AdminServices';
 
 axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/appointments" element={<AdminAppointments />} />
         <Route path="/dentists" element={<AdminDentists />} />
+        <Route path="/services" element={<AdminServices/>} />
         <Route path="/patients" element={<AdminPatients />} />
         <Route path="/transactions" element={<AdminTransactions />} />
         <Route path="/patient" element={<PatientDashboard />} />
@@ -41,7 +43,6 @@ const App = () => {
         <Route path="/patient-services" element={<PatientServices />} />
         <Route path="/patient-transactions" element={<PatientTransactions />} />
         <Route path="/patient-profile" element={<PatientProfile />} />
-
       </Routes>
       </>
   );
